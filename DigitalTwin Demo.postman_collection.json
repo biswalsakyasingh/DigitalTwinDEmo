@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "d1bf93fa-f21b-4143-99b5-c5bea0caf795",
+		"name": "DigitalTwin Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Building",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Beeah Head Quarters\",\r\n  \"description\": \"This is the Headquarter buiding\",\r\n  \"friendlyName\": \"HQ1\",\r\n  \"type\": \"VENUE\",\r\n  \"typeId\": 14,\r\n  \"subtypeId\": 13,\r\n  \"statusId\": 12\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/spaces",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"spaces"
+					]
+				},
+				"description": "This adds a building by calling space api"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Spaces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/spaces",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"spaces"
+					]
+				},
+				"description": "Find all spaces."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Resource",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"spaceId\": \"5632cd0e-f026-4c1c-8d3f-9630960ad231\",\r\n  \"type\": \"IotHub\",\r\n  \"size\": \"XS\",\r\n  \"isExternallyCreated\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/resources",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"resources"
+					]
+				},
+				"description": "Create teh resource undeer which all subitems will be placed"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Resource",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"spaceId\": \"5632cd0e-f026-4c1c-8d3f-9630960ad231\",\r\n  \"type\": \"IotHub\",\r\n  \"size\": \"XS\",\r\n  \"isExternallyCreated\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/resources",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"resources"
+					]
+				},
+				"description": "Create teh resource undeer which all subitems will be placed"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Floor ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"First Floor\",\r\n  \"description\": \"This is the first floor of Headquarter buiding\",\r\n  \"friendlyName\": \"HQ1F1\",\r\n  \"type\": \"Floor\",\r\n  \"parentSpaceId\": \"5632cd0e-f026-4c1c-8d3f-9630960ad231\",\r\n}\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/spaces",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"spaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Area on a Floor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"First Floor\",\r\n  \"description\": \"This is the first floor of Headquarter buiding\",\r\n  \"friendlyName\": \"HQ1F1\",\r\n  \"type\": \"Floor\",\r\n  \"parentSpaceId\": \"5632cd0e-f026-4c1c-8d3f-9630960ad231\",\r\n}\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/spaces",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"spaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"string\",\r\n  \"friendlyName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"type\": \"string\",\r\n  \"typeId\": 0,\r\n  \"subtype\": \"string\",\r\n  \"subtypeId\": 0,\r\n  \"hardwareId\": \"string\",\r\n  \"gatewayId\": \"string\",\r\n  \"spaceId\": \"00000000-0000-0000-0000-000000000000\",\r\n  \"status\": \"Provisioned\",\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/devices",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"devices"
+					]
+				},
+				"description": "Create device in space"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sensor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"deviceId\": \"3fff6e0f-a7a9-4031-8017-63abebff69e9\",\r\n  \"dataType\": \"MOTION\",\r\n  \"hardwareId\": \"SAMPLE_SENSOR_MOTION\",\r\n},\r\n{\r\n  \"deviceId\": \"3fff6e0f-a7a9-4031-8017-63abebff69e9\",\r\n  \"dataType\": \"CarbonDioxide\",\r\n  \"hardwareId\": \"SAMPLE_SENSOR_CARBONDIOXIDE\",\r\n},\r\n{\r\n  \"deviceId\": \"3fff6e0f-a7a9-4031-8017-63abebff69e9\",\r\n  \"dataType\": \"Temperature,\r\n  \"hardwareId\": \"SAMPLE_SENSOR_TEMPERATURE\",\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://super.northeurope.azuresmartspaces.net/management/api/v1.0/sensors",
+					"protocol": "https",
+					"host": [
+						"super",
+						"northeurope",
+						"azuresmartspaces",
+						"net"
+					],
+					"path": [
+						"management",
+						"api",
+						"v1.0",
+						"sensors"
+					]
+				},
+				"description": "Create device in space"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Matchers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Name\":\"Matcher Motion A1\",\n\"SpaceId\":\"fc404173-ddd9-4022-91fc-4535e204d863\",\n\"Conditions\":[{\"Target\":\"Sensor\",\n\t\t\t\t\"Path\":\"$.dataType\",\n\t\t\t\t\"Value\":\"Motion\",\n\t\t\t\t\"Comparison\":\"Equals\"}\n\t\t\t\t]\n\t\n},\n{\"Name\":\"Matcher CarbonDioxide A1\",\"SpaceId\":\"fc404173-ddd9-4022-91fc-4535e204d863\",\n\"Conditions\":[{\"Target\":\"Sensor\",\"Path\":\"$.dataType\",\"Value\":CarbonDioxide,\"Comparison\":\"Equals\"}]},\n{\"Name\":\"Matcher Temperature\",\"SpaceId\":\"fc404173-ddd9-4022-91fc-4535e204d863\",\n\"Conditions\":[{\"Target\":\"Sensor\",\"Path\":\"$.dataType\",\"Value\":\"Temperature\",\"Comparison\":\"Equals\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "Create matcher to track data"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSIsImtpZCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSJ9.eyJhdWQiOiIwYjA3ZjQyOS05ZjRiLTQ3MTQtOTM5Mi1jYzVlOGU4MGM4YjAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC81YjdlZmRmNS1jMGVkLTQwMjQtODUwOC05NjY4MjFhMmViMjkvIiwiaWF0IjoxNTc4MDY0MDM3LCJuYmYiOjE1NzgwNjQwMzcsImV4cCI6MTU3ODA2NzkzNywiYWNyIjoiMSIsImFpbyI6IkFVUUF1LzhOQUFBQVM1U092YVJYaDJzWkRmV2pEaDIyK3VTMERnUDZ0a1pOMmZ2bnhCTVdrWGo3Z2FWRTUxc3JBNlMxQmUyQ3dLTEJwUkhHQ1dXNmNpejVqV3Z5Z2FoMHFBPT0iLCJhbHRzZWNpZCI6IjE6bGl2ZS5jb206MDAwMzQwMDEyMEQzMzM0QiIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiIyM2JmMDM0OC1kYTk4LTQ3NTktODQ4NC03NDM0MmRlNWIyMjAiLCJhcHBpZGFjciI6IjAiLCJlbWFpbCI6InNha3lhc2luZ2hiaXN3YWxAb3V0bG9vay5jb20iLCJmYW1pbHlfbmFtZSI6ImJpc3dhbCIsImdpdmVuX25hbWUiOiJzYWt5YXNpbmdoIiwiaWRwIjoibGl2ZS5jb20iLCJpcGFkZHIiOiIxNTcuNDEuMTI1LjE3IiwibmFtZSI6InNha3lhc2luZ2hiaXN3YWwiLCJvaWQiOiJjMWUwYjY0Mi05Yjg2LTQ0N2UtYmM0ZS0zMWVlODg2ZjQ1MTciLCJwdWlkIjoiMTAwMzIwMDA5Mzg2NUEzNiIsInNjcCI6IlJlYWQuV3JpdGUiLCJzdWIiOiJXLUJlZlA2Wm9aZjBHMFZwYzZaM2d2TWN4eUpMNDRObjkzb3kyNjRMXzEwIiwidGlkIjoiNWI3ZWZkZjUtYzBlZC00MDI0LTg1MDgtOTY2ODIxYTJlYjI5IiwidW5pcXVlX25hbWUiOiJsaXZlLmNvbSNzYWt5YXNpbmdoYmlzd2FsQG91dGxvb2suY29tIiwidXRpIjoidzk3anJyZExJRS00Z1Z0NE1PMXdBQSIsInZlciI6IjEuMCJ9.Fu7WAzuGO9WFUmsLjRezGnvtIpqqdtsSrw96X0vJbz40M9z1gaUekRKUL_PQQBvKiIZNa8q0nfWdx5E15BYxFDvG-Gl7dUQcjTpXhJSNLCNgz4v1repnPnXEkzpScvo_1dsOA1_Aw_DGHboSveOMgPMiaVi6hjBKeuipz3qlagvnZxPrHBMzZO2ppNY6W2BGL_HYj5MxI6Dq7Vz_wBBEP3IEmfnNyKQZCnJd-4zuDAcK5tBV20fJgFltvrB8s3Ilp7x4ITZcLx3Wv19K74M1Zb1dJlO4Ya6E0VTuvxNXHUyaI4BSvnm1tije16Ivo5u1yJ4cG_PJ7PtgPV5-SDjSEQ",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8170e45b-a046-4287-a7fe-f43606088786",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ca745de6-f7d1-4c92-9a82-5063a1fae05d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
